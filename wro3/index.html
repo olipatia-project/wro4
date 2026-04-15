@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColorWRO - Cámara</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="camera-section">
+            <div class="video-container">
+                <video id="camera-feed" autoplay playsinline muted></video>
+                <div id="pointers-container"></div>
+            </div>
+        </div>
+        <aside class="sidebar">
+            <h1 class="title">ColorWRO</h1>
+            <div id="grid-results" class="grid-results-container">
+                <!-- Los resultados de la cuadrícula aparecerán aquí -->
+            </div>
+            <div class="config-container">
+                <div class="config-item">
+                    <a href="live.html" target="_blank" class="custom-button live-link">Ver Mosaico en Vivo</a>
+                </div>
+                <!-- Configuración GitHub -->
+                <div class="config-item github-config">
+                    <label>GitHub Sync (Auto-save)</label>
+                    <input type="password" id="gh-token" class="custom-input" placeholder="Token GitHub (classic)">
+                    <input type="text" id="gh-repo" class="custom-input" placeholder="usuario/repositorio">
+                    <div id="gh-status" class="status-indicator">Desconectado</div>
+                </div>
+                <div class="config-item">
+                    <label>Seleccionar Cámara</label>
+                    <select id="camera-select" class="custom-select">
+                        <option value="">Cargando cámaras...</option>
+                    </select>
+                </div>
+                <div class="config-item">
+                    <label>Posición Puntero</label>
+                    <button id="reset-pointer" class="custom-button">Resetear al centro</button>
+                    <p class="small-text">Haz click/toca en la cámara para mover el puntero.</p>
+                </div>
+                <div class="config-item">
+                    <label>Umbral de Color</label>
+                    <div class="input-placeholder" data-value="120">120</div>
+                </div>
+                <div class="config-item">
+                    <label>Sensibilidad</label>
+                    <div class="input-placeholder" data-value="Media">Media</div>
+                </div>
+                <div class="config-item">
+                    <label>Resolución</label>
+                    <div class="input-placeholder" data-value="720p">720p</div>
+                </div>
+                <div class="config-item">
+                    <label>Filtro</label>
+                    <div class="input-placeholder" data-value="Desactivado">Desactivado</div>
+                </div>
+            </div>
+            <p class="note">(Más configuraciones próximamente)</p>
+        </aside>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

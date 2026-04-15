@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ColorWRO - Live JSON</title>
+</head>
+<body style="margin: 0; font-family: monospace; word-break: break-all; white-space: nowrap; overflow-x: auto;">
+    <div id="json-content"></div>
+
+    <script>
+        async function updateGrid() {
+            try {
+                const response = await fetch(`mosaico.json?t=${Date.now()}`);
+                if (!response.ok) throw new Error('Error');
+                const data = await response.json();
+                // JSON.stringify(data) sin el tercer parámetro genera el JSON en una sola línea
+                document.getElementById('json-content').innerText = JSON.stringify(data);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        setInterval(updateGrid, 1000);
+        updateGrid();
+    </script>
+</body>
+</html>
